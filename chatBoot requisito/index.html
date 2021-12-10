@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cosmo/bootstrap.min.css"
+        integrity="sha384-5QFXyVb+lrCzdN228VS3HmzpiE7ZVwLQtkt+0d9W43LQMzz4HBnnqvVxKg6O+04d" crossorigin="anonymous" />
+    <link rel="stylesheet" href="adminlte.css">
+</head>
+
+<body background="fondo.png" >
+    <div class="" style="text-align: center;">
+        <h1>Chat Automatizacion</h1>
+    </div>
+    <br>
+    <br>
+
+    <!-- maquetando el chat-->
+    <div class="container p-12">
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="card" style="">
+                    <div class="card-body">
+                        <div class="row">
+                            <h1>Asignar Citas</h1>
+                            <button class="btn " id="btn-task-form" onclick="location.reload();"><img src="https://img.icons8.com/office/16/000000/refresh--v2.png"/></button>
+                        </div>                        
+                        <div class="row" >
+                            <h5>Nombre paciente  </h5>
+                            <select name="NamePatient" id="NamePatient">
+                 
+                            </select>
+                        </div>
+                        <br>
+                        <div class="row" >
+                            <h5>Medicos</h5>
+                            <select name="NameNeumologo" id="NameNeumologo">
+                 
+                            </select>
+                        </div>
+                        <br>
+                        <div class="row" >
+                            <h5>Fechas disponibles</h5>
+                            <select name="NameFechas" id="NameFechas">
+                               
+                            </select>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" id="btn-task-form" onclick="asignarCita()">Asignar</button>
+                        <form action="" id="task-form row">
+                            <!--<div class="form-group">
+                                <textarea name="" cols="30" rows="10" id="task-description" class="form-control"
+                                    placeholder="no tienes mensajes"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="" id="task-title" class="form-control"
+                                    placeholder="Ingrese mensaje" autofocus />
+                            </div>-->
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <!-- DIRECT CHAT -->
+                <div class="card direct-chat direct-chat-primary" style="height: 80vh">
+                    <div class="card-header">
+                        <h3 class="card-title">Direct Chat</h3>
+
+                        <div class="card-tools">
+                            <span title="3 New Messages" class="badge badge-primary">3</span>
+                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" title="Contacts" data-widget="chat-pane-toggle">
+                                <i class="fas fa-comments"></i>
+                            </button>
+                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body" >
+                        <!-- Conversations are loaded here -->
+                        <div class="direct-chat-messages" style="height: 60vh">
+
+
+                        </div>
+                        <!--/.direct-chat-messages-->
+
+
+                        <!-- /.direct-chat-pane -->
+                    </div>
+                    <!-- /.card-body -->
+                    <div class="card-footer">
+                        <form action="" id="task-form2">
+                            <div class="input-group">
+                                <input type="text" name="message" id="message" placeholder="Type Message ..."
+                                    class="form-control">
+                                <span class="input-group-append">
+                                    <button class="btn btn-primary" id="btn-task-form2">Send</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card-footer-->
+                </div>
+                <!--/.direct-chat -->
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- fin de maquetacion del chat -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script>
+        // Import the functions you need from the SDKs you need
+        //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCB7g0Tp5prdq2AswTGD8l9S2w_5UXnHnk",
+            authDomain: "chatautomatizacion-d668c.firebaseapp.com",
+            databaseURL:
+                "https://chatautomatizacion-d668c-default-rtdb.firebaseio.com",
+            projectId: "chatautomatizacion-d668c",
+            storageBucket: "chatautomatizacion-d668c.appspot.com",
+            messagingSenderId: "917251004154",
+            appId: "1:917251004154:web:78592a63c5d4cc5c515b43",
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+        <script src="node.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
